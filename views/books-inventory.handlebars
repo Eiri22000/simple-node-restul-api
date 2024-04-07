@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+
+<!-- template-->
+<body>
+<table id="bookTable">
+    <thead>
+        <tr>
+            <th style="min-width:500px">Name</th>
+            <th style="min-width:120px">Release year</th>
+            <th style="min-width:120px">Have I read the book?</th>
+        </tr>
+        <tr>
+            {{#each books}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.release}}</td>
+                <td>{{this.readed}}</td>
+                </tr>
+            {{/each}} 
+        </tr>
+    </thead>
+</table>
+</body>

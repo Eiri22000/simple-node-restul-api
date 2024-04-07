@@ -1,6 +1,18 @@
 body {
-    background-color: aquamarine;
-    color: brown;
-    width: 50mm;
+    background-color:cadetblue;
+    color:black;
+    width: 80vmax;
     margin: 1em auto;
+}
+
+table {
+    border-collapse: collapse black;
+    width: 75%;
+    color: black;
+}
+
+th,td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #DDD;
 }

@@ -12,10 +12,7 @@ app.use(express.urlencoded({extended: false}));
 app.engine('handlebars',exphbs.engine({defaultLayout: 'main'}));
 app.set('view engine','handlebars');
 
-app.get('/books', (req,res) => {
-    res.render('contact');
-});
-
+//get custom template
 let books = 
 [
     {id: 1, name: 'Harry Potter and the Philosophers Stone', release: 1997, readed: true},
@@ -115,6 +112,24 @@ app.patch('/books/:id', (req,res) => {
     {
         res.status(404).json({msg: "Update was not successful."});
     }
+});
+
+// Folder for static files like css, images...
+app.use(express.static('public'));
+
+app.get('/', (req,res) => {
+    res.render('index', 
+    {
+        title: 'Books',
+    });
+});
+
+app.get('/books-inventory', (req,res) => {
+    res.render('books-inventory',
+    {
+        title: 'Books inventory',
+        books: books
+    });
 });
 
 // Set the port
